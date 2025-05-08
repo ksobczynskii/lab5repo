@@ -20,10 +20,16 @@ public:
     {
         std::cout << "Country is " << name << " with a population of " << population << " people and capital in  " << c.name << " with a population of " << c.population << std::endl;
     }
+
+    bool operator()(int x)
+    {
+        return population > x;
+    }
 };
 
 int main()
 {
     Country Poland("Poland", "Warschau", 38000000, 2000000);
     Poland.print();
+    std::cout << "Czy polska ma wiecej niz 40.000.000? : " << Poland(40000000) << std::endl;
 }

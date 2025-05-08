@@ -1,4 +1,6 @@
 #include <iostream>
+#include <vector>
+#include <string>
 // to jest testowa klasa do code snippetow z wykladu
 class vector3d
 {
@@ -130,4 +132,15 @@ int main()
     goo(static_cast<vector3d>(23));                              // dziala
     std::string s = static_cast<std::string>(vector3d(6, 9, 6)); // dziala
     std::cout << s << std::endl;
+    std::string str = "skibidi";
+    std::vector<std::string> vect;
+    vect.push_back(std::move(str));
+    if (str.empty())
+    {
+        std::cout << "String was moved and is now empty" << std::endl;
+    }
+    else
+    {
+        std::cout << "String is: " << str << std::endl;
+    }
 }

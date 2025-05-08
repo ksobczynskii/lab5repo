@@ -2,11 +2,10 @@
 #include <iomanip>
 
 #include "Movie.hpp"
-// #include "MovieCollection.hpp"
+#include "MovieCollection.hpp"
 
 int main()
 {
-
     std::cout << std::fixed << std::setprecision(2);
 
     std::cout << "*************** PART 1 (Movie) ***************\n\n";
@@ -58,7 +57,7 @@ int main()
     }
 
     std::cout << "\n*************** PART 2 (Movie - additional functionality) ***************\n\n";
-    /*
+
     movie1 + 8.0 + 9.0 + 8.5;
     movie2 + 7.5 + 7.0 + 8.0;
 
@@ -73,25 +72,30 @@ int main()
     std::cout << "\nMovie2 operator<< output:\n";
     std::cout << movie2 << "\n\n";
 
-    if (movie1 == movie2) {
+    if (movie1 == movie2)
+    {
         std::cout << "Movies are equal\n";
-    } else {
+    }
+    else
+    {
         std::cout << "Movies are not equal\n";
     }
-    if (movie1 < movie2) {
+    if (movie1 < movie2)
+    {
         std::cout << "Movie1 comes before Movie2\n";
-    } else {
+    }
+    else
+    {
         std::cout << "Movie2 comes before Movie1\n";
     }
-    */
+
     std::cout << "\n*************** PART 3 (MovieCollection) ***************\n\n";
-    /*
+
     MovieCollection collection;
 
     Movie<double> dunkirk("Dunkirk", 2017, director1);
     dunkirk + 8.0 + 8.5 + 9.0;
     collection.addMovie(dunkirk);
-
     Movie<double> darkKnight("The Dark Knight", 2008, director1, "We live in a society.");
     darkKnight + 9.0 + 9.5 + 9.0;
     collection.addMovie(darkKnight);
@@ -113,24 +117,28 @@ int main()
 
     std::cout << "All movies in collection:\n";
     std::cout << collection << "\n";
-
     auto allMovies = collection.getAllMovies();
     std::cout << "Total number of movies: " << allMovies.size() << "\n\n";
 
     std::cout << "Movies under letter 'I':\n";
     auto it = collection.getMoviesByLetter().find('I');
-    if (it != collection.getMoviesByLetter().end()) {
-        for (const auto& movie : it->second) {
+    if (it != collection.getMoviesByLetter().end())
+    {
+        for (const auto &movie : it->second)
+        {
             std::cout << movie << "\n";
         }
     }
-    */
     std::cout << "\n*************** PART 4 (MovieCollection  - additional functionality) ***************\n\n";
-    /*
+
     auto foundMovie = collection.findMovieWithAverageAbove(8.0);
-    if (foundMovie) {
-        std::cout << "Found a movie with average rating above 8.0:\n" << *foundMovie << "\n";
-    } else {
+    if (foundMovie)
+    {
+        std::cout << "Found a movie with average rating above 8.0:\n"
+                  << *foundMovie << "\n";
+    }
+    else
+    {
         std::cout << "No movie found with average rating above 8.0.\n";
     }
 
@@ -147,15 +155,17 @@ int main()
 
     auto nolanMovies = collection.getMoviesByDirector("Christopher Nolan");
     std::cout << "\nMovies directed by Christopher Nolan:\n";
-    for (const auto& movie : nolanMovies) {
+    for (const auto &movie : nolanMovies)
+    {
         std::cout << movie << "\n";
     }
 
     auto andersonMovies = collection.getMoviesByDirector("Wes Anderson");
     std::cout << "\nMovies directed by Wes Anderson:\n";
-    for (const auto& movie : andersonMovies) {
+    for (const auto &movie : andersonMovies)
+    {
         std::cout << movie << "\n";
     }
-    */
+
     return 0;
 }
